@@ -13,12 +13,18 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
+DATABASE_PATH = os.path.join(BASE_DIR, 'db.sqlite3')
+
 TEMPLATE_DIRS = (
     
     TEMPLATE_PATH,
 )
 
+ADMINS = (
+    ('Fernando Castello', 'fernandocastelloo@gmail.com'),
+)
 
+MANAGERS = ADMINS
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -29,7 +35,7 @@ SECRET_KEY = '!jmqdvuoxv-z=mugtssejlr!7i#58ct9o(aj$1)o19!1fg5w*w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -67,9 +73,10 @@ WSGI_APPLICATION = 'register_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'DATABASE_PATH'
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -93,3 +100,5 @@ STATICFILES_DIRS = (
 
     STATIC_PATH,
 )
+STATIC_ROOT = ''
+

@@ -14,12 +14,14 @@
 <body>
   <section class="subscribe">
     <div class="subscribe-pitch">
-	  <img src="{%static "images/mail.png"%}"
+	  <!--<img src="{%static "images/mail.png"%}"-->
       <h3>Subscribe - DexLabs</h3>
       <p>Enter a valid e-mail address.<p>
     </div>
     <form action="index.html" method="post" class="subscribe-form">
-      <input type="email" name="email" class="subscribe-input" placeholder="Email address" autofocus required>
+		 {% csrf_token %} <!--Security layer-->
+		 {{ form }}
+      <input type="email" name="email" class="subscribe-input" placeholder="Email address" autofocus value="{{email_adress}}">
       <button type="submit" class="subscribe-submit" onclick="buttonFunction()">Subscribe</button>
     </form>
   </section>
