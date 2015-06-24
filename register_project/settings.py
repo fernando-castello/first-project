@@ -33,11 +33,11 @@ MANAGERS = ADMINS
 SECRET_KEY = '!jmqdvuoxv-z=mugtssejlr!7i#58ct9o(aj$1)o19!1fg5w*w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
